@@ -19,11 +19,18 @@ from api_yamdb.settings import ADMIN_EMAIL, USER
 
 from .filters import TitleFilter
 from .permissons import IsAdmin, IsAdminOrReadOnly, IsAuthorOrModerator
-from .serializers import (AdminsSerializer, CategorySerializer,
-                          CommentSerializer, GenreSerializer,
-                          GetTokenSerializer, ReviewSerializer,
-                          SignUpSerializer, TitleAdminSerializer,
-                          TitleUserSerializer, UsersSerializer)
+from .serializers import (
+    AdminsSerializer,
+    CategorySerializer,
+    CommentSerializer,
+    GenreSerializer,
+    GetTokenSerializer,
+    ReviewSerializer,
+    SignUpSerializer,
+    TitleAdminSerializer,
+    TitleUserSerializer,
+    UsersSerializer,
+)
 
 
 class UsersViewSet(viewsets.ModelViewSet):
@@ -349,10 +356,9 @@ class ReviewViewSet(viewsets.ModelViewSet):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
-        else:
-            return Response(
-                "Не удалось изменить!", status=status.HTTP_400_BAD_REQUEST
-            )
+        return Response(
+            "Не удалось изменить!", status=status.HTTP_400_BAD_REQUEST
+        )
 
     def destroy(self, request, pk, title_id):
         if not Title.objects.filter(id=title_id).exists():
