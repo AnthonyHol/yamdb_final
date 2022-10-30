@@ -19,18 +19,11 @@ from api_yamdb.settings import ADMIN_EMAIL, USER
 
 from .filters import TitleFilter
 from .permissons import IsAdmin, IsAdminOrReadOnly, IsAuthorOrModerator
-from .serializers import (
-    AdminsSerializer,
-    CategorySerializer,
-    CommentSerializer,
-    GenreSerializer,
-    GetTokenSerializer,
-    ReviewSerializer,
-    SignUpSerializer,
-    TitleAdminSerializer,
-    TitleUserSerializer,
-    UsersSerializer,
-)
+from .serializers import (AdminsSerializer, CategorySerializer,
+                          CommentSerializer, GenreSerializer,
+                          GetTokenSerializer, ReviewSerializer,
+                          SignUpSerializer, TitleAdminSerializer,
+                          TitleUserSerializer, UsersSerializer)
 
 
 class UsersViewSet(viewsets.ModelViewSet):
