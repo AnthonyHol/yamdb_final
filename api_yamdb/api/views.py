@@ -349,6 +349,10 @@ class ReviewViewSet(viewsets.ModelViewSet):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(
+                "Не удалось изменить!", status=status.HTTP_400_BAD_REQUEST
+            )
 
     def destroy(self, request, pk, title_id):
         if not Title.objects.filter(id=title_id).exists():

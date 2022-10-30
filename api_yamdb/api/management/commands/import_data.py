@@ -70,8 +70,7 @@ class Command(BaseCommand):
                 row.append("is_active")
                 row.append("date_joined")
             return f"INSERT INTO `{tbl_t}` ({', '.join(row)})"
-        else:
-            return f"INSERT INTO `{tbl_t}`"
+        return f"INSERT INTO `{tbl_t}`"
 
     def data_handler(self, row, file_name):
         """
