@@ -67,6 +67,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           sudo docker pull ${{ secrets.DB_HOST }}/yamdb_final
+          ls
+          ls ./yamdb_final/
           sudo docker-compose stop
           sudo docker-compose rm web
           cd ./infra/
