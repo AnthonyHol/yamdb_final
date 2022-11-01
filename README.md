@@ -119,5 +119,4 @@ GRANT ALL PRIVILEGES ON DATABASE test_base TO test_user;
 ### Панель администратора API YaMDb 
 Панель администратора доступна по эндпойнту: http://localhost:8000/admin/
 
-
 Автор: [Холкин Антон](https://github.com/AnthonyHol/ "Холкин Антон")
