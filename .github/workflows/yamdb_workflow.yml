@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.7"]
+        python-version: ["3.7", "3.8", "3.9"]
 
     steps:
     - uses: actions/checkout@v3
@@ -69,7 +69,7 @@ jobs:
           sudo docker-compose stop
           sudo docker-compose rm web
 
-          cd ./infra/
+          cd ./yamdb_final/infra/
           sudo docker-compose down
           sudo docker image pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final
           sudo docker-compose up -d --build
