@@ -67,7 +67,7 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd ./anthonyhol/yamdb_final/infra/
+          cd ./yamdb_final/infra/
           git pull origin master
           sudo docker-compose down
           sudo docker image pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb
