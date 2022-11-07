@@ -356,7 +356,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     def destroy(self, request, pk, title_id):
         if not Title.objects.filter(id=title_id).exists():
             return Response(
-                "Не найдено произведение!", status=status.HTTP_404_NOT_FOUND
+                "Произведение не найдено!", status=status.HTTP_404_NOT_FOUND
             )
         review = Review.objects.filter(title=title_id, id=pk)
         if not review.exists():
