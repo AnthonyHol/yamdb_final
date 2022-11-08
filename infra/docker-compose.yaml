@@ -9,7 +9,7 @@ services:
             - ./.env
 
     app:
-        image: andpigge/api_yamdb:latest
+        image: anthonyhol/api_yamdb:latest
         restart: always
         volumes:
             - static_value:/app/static/
