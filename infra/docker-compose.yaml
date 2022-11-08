@@ -12,8 +12,8 @@ services:
         image: anthonyhol/api_yamdb:latest
         restart: always
         volumes:
-            - static_value:/app/static/
-            - media_value:/app/media/
+            - static_value:/web/static/
+            - media_value:/web/media/
         depends_on:
             - db
         env_file:
