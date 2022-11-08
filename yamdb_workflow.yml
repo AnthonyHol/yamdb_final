@@ -69,9 +69,11 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            pwd
+            echo THIS
             cd ./yamdb_final/infra/
             pwd
-            git pull origin master
+            git pull -f origin master
 
             rm .env
             touch .env
